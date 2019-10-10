@@ -1,0 +1,104 @@
+﻿/*******************
+    LINKS
+********************/
+a {
+    color: #868e96;
+    
+}
+
+a:hover {
+    color: #f205cb;
+}
+
+/*******************
+    Navbar and DropDown Menu
+********************/
+
+header .navbar li.nav-item .nav-link.active {
+    color: #f205cb;
+}
+
+header .navbar li.nav-item .nav-link:hover {
+    color: #f205cb;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+header .navbar .dropdown-menu .dropdown-item:hover {
+    color: #f205cb;
+}
+
+header .navbar .dropdown-menu .dropdown-item.active {
+    background: #f205cb;
+    color: #fff;
+}
+/*************************
+    FOOTER
+**************************/
+
+/*targeting template link in footer*/
+div.text-md-center > p a.template {
+    color: #f205cb;
+}
+
+
+/*************************
+    Login Page
+*************************/
+.loginForm {
+    width: 80%;
+    margin: auto;
+}
+
+/********************
+    LoginPartial
+*********************/
+header .navbar .dropdown-menu a {
+    padding: 7px;
+}
+
+/*All buttons*/
+.btn {
+    color: white;
+    cursor: pointer;
+    background-color: #f205cb;
+}
+ /*INDEX*/
+h2, h3, h4 {
+    color: #f205cb;
+}
+
+.img-thumbnail:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+
+.mainTitle:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/********************
+    Contact
+********************/
+
+span.phoneNumber {
+    color: #868e96;
+}
+
+span.phoneNumber :hover {
+        color: #f205cb;
+}
+
+/*************************
+    Services
+**************************/
+
+.heading-wrap h2:before {
+    background: #f205cb;
+}
