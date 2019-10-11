@@ -70,7 +70,7 @@ textarea.form-control {
 
 .btn.btn-outline-primary {
   border-width: 2px;
-  color: #cf1d16;
+  /*color: #cf1d16;*/
 }
 
 .btn.btn-outline-primary:hover, .btn.btn-outline-primary:focus, .btn.btn-outline-primary:active {
@@ -126,7 +126,7 @@ header .navbar-brand.absolute {
 }
 
 header .navbar-brand span {
-  color: #cf1d16;
+  /*color: #cf1d16;*/
 }
 
 @media (min-width: 768px) {
@@ -182,7 +182,7 @@ header .navbar .dropdown-menu {
 header .navbar .dropdown-menu:before {
   bottom: 100%;
   left: 10%;
-  border: solid transparent;
+  /*border: solid transparent;*/
   content: " ";
   height: 0;
   width: 0;
@@ -195,18 +195,19 @@ header .navbar .dropdown-menu:before {
 @media (max-width: 991px) {
   header .navbar .dropdown-menu:before {
     display: none;
+    
   }
 }
 
-header .navbar .dropdown-menu .dropdown-item:hover {
-    /*background: #f205cb;*/
+/*header .navbar .dropdown-menu .dropdown-item:hover {
+    background: #f205cb;
     color: #fff;
 }
 
 header .navbar .dropdown-menu .dropdown-item.active {
     background: #f205cb;
     color: #fff;
-}
+}*/
 
 header .navbar .dropdown-menu a {
   padding-top: 7px;
@@ -263,7 +264,7 @@ header .navbar .cta-btn a:hover {
 
 .section-heading .small-sub-heading {
   font-size: 14px;
-  color: #cf1d16;
+  /*color: #cf1d16;*/
 }
 
 .blog .media h3 {
@@ -341,7 +342,7 @@ header .navbar .cta-btn a:hover {
   font-size: 20px;
   color: #fff;
   display: inline-block;
-  background: #cf1d16;
+  /*background: #cf1d16;*/
   width: 100px;
   height: 100px;
   line-height: 100px;
@@ -379,7 +380,7 @@ header .navbar .cta-btn a:hover {
 .heading-wrap h2:before {
   width: 80px;
   height: 2px;
-  background: #cf1d16;
+  /*background: #cf1d16;*/
   content: "";
   position: absolute;
   top: 0;
@@ -480,7 +481,7 @@ header .navbar .cta-btn a:hover {
 
 .custom-icon {
   font-size: 70px;
-  color: #cf1d16;
+  /*color: #cf1d16;*/
 }
 
 /* Owl Carousel */
@@ -563,7 +564,7 @@ header .navbar .cta-btn a:hover {
 }
 
 .owl-carousel.centernonloop .owl-dots .owl-dot.active {
-  background: #cf1d16;
+  /*background: #cf1d16;*/
 }
 
 .owl-carousel.centernonloop .owl-dots .owl-dot:active, .owl-carousel.centernonloop .owl-dots .owl-dot:focus {
@@ -825,7 +826,7 @@ header .navbar .cta-btn a:hover {
 }
 
 .form-wrap.primary {
-  background: #cf1d16;
+  /*background: #cf1d16;*/
 }
 
 .form-wrap.warning {
@@ -879,7 +880,7 @@ header .navbar .cta-btn a:hover {
   position: relative;
   width: 0px;
   font-size: 30px;
-  color: #cf1d16;
+  /*color: #cf1d16;*/
 }
 
 .load-more {
@@ -892,7 +893,7 @@ header .navbar .cta-btn a:hover {
 }
 
 .load-more:hover {
-  background: #cf1d16;
+  /*background: #cf1d16;*/
   color: #fff;
 }
 
@@ -932,7 +933,7 @@ header .navbar .cta-btn a:hover {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  background: #cf1d16;
+  /*background: #cf1d16;*/
 }
 
 .text-black {
@@ -961,7 +962,7 @@ header .navbar .cta-btn a:hover {
 
 .media-feature .icon {
   font-size: 60px;
-  color: #cf1d16;
+  /*color: #cf1d16;*/
 }
 
 .media-feature h3 {
@@ -976,7 +977,7 @@ header .navbar .cta-btn a:hover {
   -ms-transform: scale(1.05);
   transform: scale(1.05);
   z-index: 2;
-  border-bottom: 10px solid #cf1d16;
+  border-bottom: 10px solid #000;
 }
 
 .media-custom {
@@ -1085,7 +1086,7 @@ header .navbar .cta-btn a:hover {
 }
 
 .site-footer a {
-  color: #cf1d16;
+  /*color: #cf1d16;*/
   border-bottom: 1px solid transparent;
 }
 

@@ -3,12 +3,11 @@
 ********************/
 a {
     color: #868e96;
-    
 }
 
-a:hover {
-    color: #f205cb;
-}
+    a:hover {
+        color: #f205cb;
+    }
 
 /*******************
     Navbar and DropDown Menu
@@ -34,15 +33,53 @@ header .navbar .dropdown-menu .dropdown-item.active {
     background: #f205cb;
     color: #fff;
 }
+
+
+header .navbar .dropdown-menu:before {
+    /*display: none;*/
+    background-color: #f205cb;
+}
+
+header .navbar .dropdown-menu .dropdown-item:active {
+    background-color: unset;
+}
+
+header .navbar .dropdown-menu {
+    font-size: .8em;
+}
+
+.ml-3, .mx-3 {
+    margin-left: unset !important;
+}
+
+header .navbar {
+    background: unset !important
+}
+
+#registerLink, #loginLink {
+    color: white;
+}
+
+#registerLink:hover, #loginLink:hover {
+        color: #f205cb;
+}
+
+.navbar > .container, 
+.navbar > .container-fluid {
+    text-align: center;
+}
 /*************************
     FOOTER
 **************************/
-
 /*targeting template link in footer*/
-div.text-md-center > p a.template {
+div .text-md-center > p a.template {
     color: #f205cb;
 }
 
+
+div.text-md-center > p {
+    font-size: 12px;
+}
 
 /*************************
     Login Page
@@ -65,7 +102,7 @@ header .navbar .dropdown-menu a {
     cursor: pointer;
     background-color: #f205cb;
 }
- /*INDEX*/
+/*INDEX*/
 h2, h3, h4 {
     color: #f205cb;
 }
@@ -91,9 +128,9 @@ span.phoneNumber {
     color: #868e96;
 }
 
-span.phoneNumber :hover {
+    span.phoneNumber :hover {
         color: #f205cb;
-}
+    }
 
 /*************************
     Services
@@ -101,4 +138,12 @@ span.phoneNumber :hover {
 
 .heading-wrap h2:before {
     background: #f205cb;
+}
+
+/**************************
+    Forgot Password
+**************************/
+.forgotPassword {
+    margin: auto;
+    width: 60%;
 }

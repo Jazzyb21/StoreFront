@@ -11,7 +11,7 @@
     <li class="nav-item dropdown">
         <span class="nav-link dropdown-toggle ml-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hello!</span>
         <div class="dropdown-menu" aria-labelledby="dropdown04">
-            @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "dropdown- item" })
+            @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "dropdown-item" })
             <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
         </div>
     </li>
