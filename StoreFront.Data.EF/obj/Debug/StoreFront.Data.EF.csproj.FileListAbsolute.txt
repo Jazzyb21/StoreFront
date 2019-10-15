@@ -1,0 +1,12 @@
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.Data.EF\bin\Debug\StoreFront.Data.EF.dll.config
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.Data.EF\bin\Debug\StoreFront.Data.EF.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.Data.EF\bin\Debug\StoreFront.Data.EF.pdb
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.Data.EF\bin\Debug\EntityFramework.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.Data.EF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.Data.EF\bin\Debug\EntityFramework.xml
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.Data.EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.Data.EF\obj\Debug\StoreFront.Data.EF.csprojAssemblyReference.cache
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.Data.EF\obj\Debug\StoreFront.Data.EF.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.Data.EF\obj\Debug\StoreFront.Data.EF.csproj.CopyComplete
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.Data.EF\obj\Debug\StoreFront.Data.EF.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.Data.EF\obj\Debug\StoreFront.Data.EF.pdb

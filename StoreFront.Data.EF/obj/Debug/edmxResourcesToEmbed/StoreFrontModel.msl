@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StoreFrontModelStoreContainer" CdmEntityContainer="StoreFrontEntities">
+    <EntitySetMapping Name="Bakeries">
+      <EntityTypeMapping TypeName="StoreFrontModel.Bakery">
+        <MappingFragment StoreEntitySet="Bakery">
+          <ScalarProperty Name="BakeryTreatID" ColumnName="BakeryTreatID" />
+          <ScalarProperty Name="TreatName" ColumnName="TreatName" />
+          <ScalarProperty Name="TreatCategoryID" ColumnName="TreatCategoryID" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="UnitsSold" ColumnName="UnitsSold" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="TreatStatusID" ColumnName="TreatStatusID" />
+          <ScalarProperty Name="HasGlutenID" ColumnName="HasGlutenID" />
+          <ScalarProperty Name="Calories" ColumnName="Calories" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SeasonID" ColumnName="SeasonID" />
+          <ScalarProperty Name="Ingredients" ColumnName="Ingredients" />
+          <ScalarProperty Name="ImageFileName" ColumnName="ImageFileName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BakerySuppliers">
+      <EntityTypeMapping TypeName="StoreFrontModel.BakerySupplier">
+        <MappingFragment StoreEntitySet="BakerySupplier">
+          <ScalarProperty Name="BakeryTreatSupplierID" ColumnName="BakeryTreatSupplierID" />
+          <ScalarProperty Name="BakeryTreatID" ColumnName="BakeryTreatID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HasGlutens">
+      <EntityTypeMapping TypeName="StoreFrontModel.HasGluten">
+        <MappingFragment StoreEntitySet="HasGluten">
+          <ScalarProperty Name="HasGlutenID" ColumnName="HasGlutenID" />
+          <ScalarProperty Name="GlutenStatus" ColumnName="GlutenStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seasons">
+      <EntityTypeMapping TypeName="StoreFrontModel.Season">
+        <MappingFragment StoreEntitySet="Season">
+          <ScalarProperty Name="SeasonID" ColumnName="SeasonID" />
+          <ScalarProperty Name="SeasonName" ColumnName="SeasonName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="StoreFrontModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TreatCategories">
+      <EntityTypeMapping TypeName="StoreFrontModel.TreatCategory">
+        <MappingFragment StoreEntitySet="TreatCategory">
+          <ScalarProperty Name="TreatCategoryID" ColumnName="TreatCategoryID" />
+          <ScalarProperty Name="TreatCategoryName" ColumnName="TreatCategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TreatStatus">
+      <EntityTypeMapping TypeName="StoreFrontModel.TreatStatu">
+        <MappingFragment StoreEntitySet="TreatStatus">
+          <ScalarProperty Name="TreatStatusID" ColumnName="TreatStatusID" />
+          <ScalarProperty Name="TreatStatusName" ColumnName="TreatStatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -35,6 +35,12 @@ namespace StoreFront.UI.MVC.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Bakery()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Contact(ContactViewModel cvm)

@@ -103,3 +103,6 @@ C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.
 C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.UI.MVC\obj\Debug\StoreFront.UI.MVC.csproj.CopyComplete
 C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.UI.MVC\obj\Debug\StoreFront.UI.MVC.dll
 C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.UI.MVC\obj\Debug\StoreFront.UI.MVC.pdb
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.UI.MVC\bin\StoreFront.Data.EF.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.UI.MVC\bin\StoreFront.Data.EF.pdb
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\StoreFront.UI.MVC\bin\StoreFront.Data.EF.dll.config

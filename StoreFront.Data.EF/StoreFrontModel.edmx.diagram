@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="542be848af1f4995bfc556fd3c91c4fe" Name="Diagram1">
+        <EntityTypeShape EntityType="StoreFrontModel.Bakery" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreFrontModel.BakerySupplier" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreFrontModel.HasGluten" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreFrontModel.Season" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreFrontModel.Supplier" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreFrontModel.TreatCategory" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoreFrontModel.TreatStatu" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <AssociationConnector Association="StoreFrontModel.FK_Bakery_HasGluten" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreFrontModel.FK_Bakery_Season" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreFrontModel.FK_Bakery_TreatCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreFrontModel.FK_Bakery_TreatStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreFrontModel.FK_BakerySupplier_Bakery" ManuallyRouted="false" />
+        <AssociationConnector Association="StoreFrontModel.FK_BakerySupplier_Supplier" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

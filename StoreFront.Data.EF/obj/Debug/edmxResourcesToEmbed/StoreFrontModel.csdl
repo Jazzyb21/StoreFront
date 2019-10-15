@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StoreFrontModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bakery">
+    <Key>
+      <PropertyRef Name="BakeryTreatID" />
+    </Key>
+    <Property Name="BakeryTreatID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TreatName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TreatCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Cost" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="UnitsSold" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="TreatStatusID" Type="Int32" Nullable="false" />
+    <Property Name="HasGlutenID" Type="Int32" Nullable="false" />
+    <Property Name="Calories" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="SeasonID" Type="Int32" Nullable="false" />
+    <Property Name="Ingredients" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ImageFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="HasGluten" Relationship="Self.FK_Bakery_HasGluten" FromRole="Bakery" ToRole="HasGluten" />
+    <NavigationProperty Name="Season" Relationship="Self.FK_Bakery_Season" FromRole="Bakery" ToRole="Season" />
+    <NavigationProperty Name="TreatCategory" Relationship="Self.FK_Bakery_TreatCategory" FromRole="Bakery" ToRole="TreatCategory" />
+    <NavigationProperty Name="TreatStatu" Relationship="Self.FK_Bakery_TreatStatus" FromRole="Bakery" ToRole="TreatStatus" />
+    <NavigationProperty Name="BakerySuppliers" Relationship="Self.FK_BakerySupplier_Bakery" FromRole="Bakery" ToRole="BakerySupplier" />
+  </EntityType>
+  <EntityType Name="BakerySupplier">
+    <Key>
+      <PropertyRef Name="BakeryTreatSupplierID" />
+    </Key>
+    <Property Name="BakeryTreatSupplierID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BakeryTreatID" Type="Int32" Nullable="false" />
+    <Property Name="SupplierID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bakery" Relationship="Self.FK_BakerySupplier_Bakery" FromRole="BakerySupplier" ToRole="Bakery" />
+    <NavigationProperty Name="Supplier" Relationship="Self.FK_BakerySupplier_Supplier" FromRole="BakerySupplier" ToRole="Supplier" />
+  </EntityType>
+  <EntityType Name="HasGluten">
+    <Key>
+      <PropertyRef Name="HasGlutenID" />
+    </Key>
+    <Property Name="HasGlutenID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GlutenStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Bakeries" Relationship="Self.FK_Bakery_HasGluten" FromRole="HasGluten" ToRole="Bakery" />
+  </EntityType>
+  <EntityType Name="Season">
+    <Key>
+      <PropertyRef Name="SeasonID" />
+    </Key>
+    <Property Name="SeasonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SeasonName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Bakeries" Relationship="Self.FK_Bakery_Season" FromRole="Season" ToRole="Bakery" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="BakerySuppliers" Relationship="Self.FK_BakerySupplier_Supplier" FromRole="Supplier" ToRole="BakerySupplier" />
+  </EntityType>
+  <EntityType Name="TreatCategory">
+    <Key>
+      <PropertyRef Name="TreatCategoryID" />
+    </Key>
+    <Property Name="TreatCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TreatCategoryName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Bakeries" Relationship="Self.FK_Bakery_TreatCategory" FromRole="TreatCategory" ToRole="Bakery" />
+  </EntityType>
+  <EntityType Name="TreatStatu">
+    <Key>
+      <PropertyRef Name="TreatStatusID" />
+    </Key>
+    <Property Name="TreatStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TreatStatusName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Bakeries" Relationship="Self.FK_Bakery_TreatStatus" FromRole="TreatStatus" ToRole="Bakery" />
+  </EntityType>
+  <Association Name="FK_Bakery_HasGluten">
+    <End Role="HasGluten" Type="Self.HasGluten" Multiplicity="1" />
+    <End Role="Bakery" Type="Self.Bakery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HasGluten">
+        <PropertyRef Name="HasGlutenID" />
+      </Principal>
+      <Dependent Role="Bakery">
+        <PropertyRef Name="HasGlutenID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bakery_Season">
+    <End Role="Season" Type="Self.Season" Multiplicity="1" />
+    <End Role="Bakery" Type="Self.Bakery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Season">
+        <PropertyRef Name="SeasonID" />
+      </Principal>
+      <Dependent Role="Bakery">
+        <PropertyRef Name="SeasonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bakery_TreatCategory">
+    <End Role="TreatCategory" Type="Self.TreatCategory" Multiplicity="1" />
+    <End Role="Bakery" Type="Self.Bakery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TreatCategory">
+        <PropertyRef Name="TreatCategoryID" />
+      </Principal>
+      <Dependent Role="Bakery">
+        <PropertyRef Name="TreatCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bakery_TreatStatus">
+    <End Role="TreatStatus" Type="Self.TreatStatu" Multiplicity="1" />
+    <End Role="Bakery" Type="Self.Bakery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TreatStatus">
+        <PropertyRef Name="TreatStatusID" />
+      </Principal>
+      <Dependent Role="Bakery">
+        <PropertyRef Name="TreatStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BakerySupplier_Bakery">
+    <End Role="Bakery" Type="Self.Bakery" Multiplicity="1" />
+    <End Role="BakerySupplier" Type="Self.BakerySupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bakery">
+        <PropertyRef Name="BakeryTreatID" />
+      </Principal>
+      <Dependent Role="BakerySupplier">
+        <PropertyRef Name="BakeryTreatID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BakerySupplier_Supplier">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="BakerySupplier" Type="Self.BakerySupplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="BakerySupplier">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StoreFrontEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bakeries" EntityType="Self.Bakery" />
+    <EntitySet Name="BakerySuppliers" EntityType="Self.BakerySupplier" />
+    <EntitySet Name="HasGlutens" EntityType="Self.HasGluten" />
+    <EntitySet Name="Seasons" EntityType="Self.Season" />
+    <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+    <EntitySet Name="TreatCategories" EntityType="Self.TreatCategory" />
+    <EntitySet Name="TreatStatus" EntityType="Self.TreatStatu" />
+    <AssociationSet Name="FK_Bakery_HasGluten" Association="Self.FK_Bakery_HasGluten">
+      <End Role="HasGluten" EntitySet="HasGlutens" />
+      <End Role="Bakery" EntitySet="Bakeries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bakery_Season" Association="Self.FK_Bakery_Season">
+      <End Role="Season" EntitySet="Seasons" />
+      <End Role="Bakery" EntitySet="Bakeries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bakery_TreatCategory" Association="Self.FK_Bakery_TreatCategory">
+      <End Role="TreatCategory" EntitySet="TreatCategories" />
+      <End Role="Bakery" EntitySet="Bakeries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bakery_TreatStatus" Association="Self.FK_Bakery_TreatStatus">
+      <End Role="TreatStatus" EntitySet="TreatStatus" />
+      <End Role="Bakery" EntitySet="Bakeries" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BakerySupplier_Bakery" Association="Self.FK_BakerySupplier_Bakery">
+      <End Role="Bakery" EntitySet="Bakeries" />
+      <End Role="BakerySupplier" EntitySet="BakerySuppliers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BakerySupplier_Supplier" Association="Self.FK_BakerySupplier_Supplier">
+      <End Role="Supplier" EntitySet="Suppliers" />
+      <End Role="BakerySupplier" EntitySet="BakerySuppliers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
