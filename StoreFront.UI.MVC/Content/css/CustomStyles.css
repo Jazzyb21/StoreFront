@@ -71,7 +71,7 @@ header .navbar {
 
 @media (max-width: 992px) {
     header {
-        background-color: #F2DCEC;
+        background-color: #7ABFB3;
         font-weight: 600;
     }
 }
@@ -182,3 +182,5 @@ span.phoneNumber {
 .btn-primary:active {
     background-color: unset;
 }
+
+

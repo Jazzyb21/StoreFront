@@ -108,7 +108,7 @@
 
 
 <section class="section bg-light element-animate">
-    <div class="container">
+    <div class="container   serviceWrapper">
         <h2 class="text-center mb-4">@ViewBag.Title</h2>
         <div class="row">
             @foreach (var item in Model)
@@ -119,10 +119,12 @@
                             <img class="img-fluid img-thumbnail border-00" src="~/Content/img/@item.ImageFileName" alt="@item.TreatName" />
                         </a>
                     </div>
-                    <a href="@Url.Action("Details", new { id = item.BakeryTreatID })">
-                        <h4 class="mb-4 mt-4"> @Html.DisplayFor(modelItem => item.TreatName)</h4>
-                    </a>
-                    <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                    <div class="serviceWrapperInner">
+                        <a href="@Url.Action("Details", new { id = item.BakeryTreatID })">
+                            <h4 class="mb-4 mt-4"> @Html.DisplayFor(modelItem => item.TreatName)</h4>
+                        </a>
+                        <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                    </div>
                 </div>
             }
         </div>
