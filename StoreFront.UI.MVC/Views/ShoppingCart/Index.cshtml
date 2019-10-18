@@ -1,0 +1,81 @@
+﻿@model Dictionary<int, StoreFront.UI.MVC.Models.CartItemViewModel>
+
+@{
+    ViewBag.Title = "Shopping Cart";
+
+    decimal? cartTotal = 0;
+    int totalCartItems = 0;
+}
+
+<div class="container">
+    <p class="text-right p-3">
+        @Html.ActionLink("Back To Shopping", "Index", "Bakeries")
+    </p>
+</div>
+
+<h2 class="text-center mb-2">@ViewBag.Title</h2>
+
+@if (Model.Count == 0)
+{
+    <div class="container">
+        <div class="offset-2 col-md-8"><p class="alert alert-danger text-center">@ViewBag.Message</p></div>
+    </div>
+}
+else
+{
+
+
+    <table class="table">
+        <tr>
+            <th>Bakery Treat</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img class="img-fluid img-thumbnail border-00" src="~/Content/img/@item.Value.BakedGood.ImageFileName" alt="Image of Bakery Treat, @item.Value.BakedGood.TreatName" />
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.Value.BakedGood.TreatName)
+                </td>
+                <td>
+                    @Html.DisplayFor(x => item.Value.BakedGood.Price)
+                </td>
+                <td>
+                    @using (Html.BeginForm("UpdateCart", "ShoppingCart", FormMethod.Post))
+                    {
+                        @Html.Hidden("bakeryTreatId", item.Value.BakedGood.BakeryTreatID)
+                        @Html.TextBox("qty", item.Value.Qty, new { @class = "form-control", style = "max-width: 50px; display: inline;" })
+                        <input type="submit" value="Update Quantity" class="btn btn-info" />
+                    }
+
+                    @{totalCartItems += item.Value.Qty;}
+                </td>
+                <td>
+                    @{
+                        decimal? lineTotal = item.Value.BakedGood.Price * item.Value.Qty;
+                        cartTotal += lineTotal;
+                    }
+
+                    @string.Format("{0:c}", lineTotal)
+                </td>
+                <td>
+                    @Html.ActionLink("Remove From Cart", "RemoveFromCart", new { id = item.Value.BakedGood.BakeryTreatID })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <p class="alert alert-success text-center" style="font-size: 1.2em;">
+        You have <big>@totalCartItems</big> item(s) in your cart.
+        <br />
+        Your total before taxes is <big>@string.Format($"{cartTotal:c}")</big>
+    </p>
+}

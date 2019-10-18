@@ -1,0 +1,100 @@
+﻿@model StoreFront.Data.EF.Bakery
+
+@{
+    ViewBag.Title = "Details for " + Model.TreatName;
+}
+
+
+<div class="container mainContainer">
+    <div class="text-center" id="header">
+        <h2 class="mt-3">@Html.DisplayFor(model => model.TreatName)</h2>
+    </div>
+    <div class="row">
+        <div class="offset-2 col-md-4">
+            <div class="float-left">
+                <p>
+                    <img class="img-fluid img-thumbnail border-00" src="~/Content/img/@Model.ImageFileName" alt="@Model.TreatName" />
+                </p>
+                <p>
+                    <strong>@Html.DisplayNameFor(model => model.Price):</strong>
+                    @Html.DisplayFor(model => model.Price)
+                </p>
+                @if (!User.IsInRole("Admin"))
+                {
+                    using (Html.BeginForm("AddToCart", "Bakeries", FormMethod.Post))
+                    {
+                        @Html.HiddenFor(x => x.BakeryTreatID)
+
+                        <div>
+                            <span class="label"><strong>Quantity</strong></span>
+                            @Html.TextBox("Qty", 1, new { @class = "form-control", style = "max-width: 50px; display: inline;" })
+
+                            <input type="submit" value="Add to Cart" class="btn btn-primary" />
+                        </div>
+                    }
+                }
+                @if (User.IsInRole("Admin"))
+                {
+                    <p>
+                        <strong>@Html.DisplayNameFor(model => model.Cost):</strong>
+                        @Html.DisplayFor(model => model.Cost)
+                    </p>
+                    <p>
+                        <strong>@Html.DisplayNameFor(model => model.UnitsSold):</strong>
+                        @Html.DisplayFor(model => model.UnitsSold)
+                    </p>
+                    <p>
+                        <strong>@Html.DisplayNameFor(model => model.Season.SeasonName):</strong>
+                        @Html.DisplayFor(model => model.Season.SeasonName)
+                    </p>
+                }
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="float-right containerRight">
+                <p>
+                    <strong>@Html.DisplayNameFor(model => model.TreatCategory.TreatCategoryName):</strong>
+                    @Html.DisplayFor(model => model.TreatCategory.TreatCategoryName)
+                </p>
+                <p>
+                    <strong> @Html.DisplayNameFor(model => model.TreatStatu.TreatStatusName):</strong>
+                    @Html.DisplayFor(model => model.TreatStatu.TreatStatusName)
+                </p>
+                @if (User.IsInRole("Admin"))
+                {
+                    <p>
+                        <strong> @Html.DisplayNameFor(model => model.Quantity):</strong>
+                        @Html.DisplayFor(model => model.Quantity)
+                    </p>
+                }
+                <p>
+                    <strong>@Html.DisplayNameFor(model => model.Description):</strong>
+                    @Html.DisplayFor(model => model.Description)
+                </p>
+                <p>
+                    <strong>@Html.DisplayNameFor(model => model.HasGluten.GlutenStatus):</strong>
+                    @Html.DisplayFor(model => model.HasGluten.GlutenStatus)
+                </p>
+                <p>
+                    <strong>@Html.DisplayNameFor(model => model.Calories):</strong>
+                    @Html.DisplayFor(model => model.Calories)
+                </p>
+                <p>
+                    <strong>@Html.DisplayNameFor(model => model.Ingredients):</strong>
+                    @Html.DisplayFor(model => model.Ingredients)
+                </p>
+                @if (User.IsInRole("Admin"))
+                {
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.BakeryTreatID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = Model.BakeryTreatID })
+                    </p>
+                }
+            </div>
+        </div>
+        <div class="text-left">
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+</div>
+

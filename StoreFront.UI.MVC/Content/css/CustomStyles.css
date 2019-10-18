@@ -108,8 +108,9 @@ header .navbar .dropdown-menu a {
     color: white;
     cursor: pointer;
     background-color: #f205cb;
+    border-color: unset;
 }
-/*INDEX*/
+/*INDEX: Home Controller*/
 h2, h3, h4 {
     color: #f205cb;
 }
@@ -119,7 +120,6 @@ h2, h3, h4 {
     -ms-transform: scale(1.1);
     transform: scale(1.1);
 }
-
 
 .mainTitle:hover {
     -webkit-transform: scale(1.1);
@@ -153,4 +153,32 @@ span.phoneNumber {
 .forgotPassword {
     margin: auto;
     width: 60%;
+}
+
+
+/******************
+    Index, Edit, Create, Delete BakeriesController
+***********************/
+
+.img-thumbnail {
+    border: unset;
+    width: 255px;
+    height: 200px;
+}
+
+.containerRight {
+    margin-top: 2.3em;
+}
+
+.mainContainer > .row {
+    padding: 4em;
+}
+
+.btn-primary:hover {
+    background-color: #f205cb;
+    border-color: unset;
+}
+
+.btn-primary:active {
+    background-color: unset;
 }

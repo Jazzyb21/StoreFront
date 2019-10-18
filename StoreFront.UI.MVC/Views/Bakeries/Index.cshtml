@@ -1,0 +1,131 @@
+﻿@model IEnumerable<StoreFront.Data.EF.Bakery>
+
+@{
+    ViewBag.Title = "Bakery " + "Treats";
+}
+
+@*<h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TreatName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitsSold)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Calories)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ingredients)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageFileName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HasGluten.GlutenStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Season.SeasonName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TreatCategory.TreatCategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TreatStatu.TreatStatusName)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TreatName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitsSold)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Calories)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ingredients)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImageFileName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HasGluten.GlutenStatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Season.SeasonName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TreatCategory.TreatCategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TreatStatu.TreatStatusName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BakeryTreatID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.BakeryTreatID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BakeryTreatID })
+                </td>
+            </tr>
+        }
+
+    </table>*@
+
+
+
+<section class="section bg-light element-animate">
+    <div class="container">
+        <h2 class="text-center mb-4">@ViewBag.Title</h2>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-center">
+                    <div>
+                        <a href="@Url.Action("Details", new { id = item.BakeryTreatID })">
+                            <img class="img-fluid img-thumbnail border-00" src="~/Content/img/@item.ImageFileName" alt="@item.TreatName" />
+                        </a>
+                    </div>
+                    <a href="@Url.Action("Details", new { id = item.BakeryTreatID })">
+                        <h4 class="mb-4 mt-4"> @Html.DisplayFor(modelItem => item.TreatName)</h4>
+                    </a>
+                    <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+

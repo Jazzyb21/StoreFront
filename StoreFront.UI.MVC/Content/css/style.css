@@ -59,10 +59,10 @@ textarea.form-control {
   border-width: 2px;
 }
 
-.btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
+/*.btn.btn-primary:hover, .btn.btn-primary:active, .btn.btn-primary:focus {
   border-color: #e9362f;
   background: #e9362f;
-}
+}*/
 
 .btn.btn-sm {
   font-size: 12px;
