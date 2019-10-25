@@ -50,6 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>StoreFrontModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>StoreFrontModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>StoreFrontModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>StoreFrontModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Bakery.cs">
       <DependentUpon>StoreFrontModel.tt</DependentUpon>
     </Compile>
@@ -86,6 +98,9 @@
       <DependentUpon>StoreFrontModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TreatStatu.cs">
+      <DependentUpon>StoreFrontModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetail.cs">
       <DependentUpon>StoreFrontModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -1,17 +1,31 @@
 ﻿@using Microsoft.AspNet.Identity
+@using StoreFront.Data.EF
 @if (Request.IsAuthenticated) {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" })) {
+
+        StoreFrontEntities db = new StoreFrontEntities();
+
+        string userID = User.Identity.GetUserId();
+
+        UserDetail currentUser = db.UserDetails.Where(ud => ud.UserID == userID).FirstOrDefault();
+
+        @*First or default allows us to return one thing back*@
+
+string userName = "Guest";
+
+if (currentUser != null)
+{
+    userName = currentUser.FirstName;
+
+}
+
+
+using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" })) {
         @Html.AntiForgeryToken()
 
 <ul class="nav navbar-nav navbar-right">
-    @*<li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "text-white" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>*@
     <li class="nav-item dropdown">
-        <span class="nav-link dropdown-toggle ml-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hello!</span>
+        <span class="nav-link dropdown-toggle ml-3" id="CustomerName" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@Html.ActionLink($"Hi, {userName}!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</span>
         <div class="dropdown-menu" aria-labelledby="dropdown04">
-            @Html.ActionLink(User.Identity.GetUserName(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "dropdown-item" })
             <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
         </div>
     </li>

@@ -69,6 +69,10 @@ header .navbar {
     text-align: center;
 }
 
+/*#ShoppingCart{
+    margin-top: 1.5em;
+}*/
+
 @media (max-width: 992px) {
     header {
         background-color: #7ABFB3;
@@ -86,6 +90,12 @@ div .text-md-center > p a.template {
 
 div.text-md-center > p {
     font-size: 12px;
+}
+
+.socialLinks {
+    display: flex;
+    margin: auto;
+    width: 15%;
 }
 
 /*************************
@@ -181,6 +191,15 @@ span.phoneNumber {
 
 .btn-primary:active {
     background-color: unset;
+}
+
+.dropDown {
+    height: 50px !important;
+}
+
+.mainEdit {
+    margin: auto;
+    width: 60%;
 }
 
 

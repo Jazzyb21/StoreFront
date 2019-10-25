@@ -172,4 +172,22 @@ namespace StoreFront.Data.EF
 
     }
     #endregion
+
+    #region User Details Metadata
+    public class UserDetailsMetadata
+    {
+        // public string UserID { get; set; }
+
+        [StringLength(50, ErrorMessage = "This requires a value of 50 characters or less.")]
+        public string FirstName { get; set; }
+        [StringLength(75, ErrorMessage = "This requires a value of 75 characters of less.")]
+        public string LastName { get; set; }
+    }
+
+    [MetadataType(typeof(UserDetailsMetadata))]
+    public partial class UserDetail
+    {
+
+    }
+    #endregion
 }

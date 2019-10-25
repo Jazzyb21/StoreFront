@@ -109,6 +109,12 @@
 
 <section class="section bg-light element-animate">
     <div class="container   serviceWrapper">
+        @if (User.IsInRole("Admin"))
+        {
+            <p>
+                @Html.ActionLink("Add Bakery Treat", "Create")
+            </p>
+        }
         <h2 class="text-center mb-4">@ViewBag.Title</h2>
         <div class="row">
             @foreach (var item in Model)

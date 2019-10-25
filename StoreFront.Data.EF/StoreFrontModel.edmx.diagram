@@ -18,6 +18,15 @@
         <AssociationConnector Association="StoreFrontModel.FK_Bakery_TreatStatus" ManuallyRouted="false" />
         <AssociationConnector Association="StoreFrontModel.FK_BakerySupplier_Bakery" ManuallyRouted="false" />
         <AssociationConnector Association="StoreFrontModel.FK_BakerySupplier_Supplier" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="StoreFrontModel.AspNetRole" Width="1.5" PointX="6" PointY="6.375" />
+        <EntityTypeShape EntityType="StoreFrontModel.AspNetUserClaim" Width="1.5" PointX="10.5" PointY="8.75" />
+        <EntityTypeShape EntityType="StoreFrontModel.AspNetUserLogin" Width="1.5" PointX="10.5" PointY="6.25" />
+        <EntityTypeShape EntityType="StoreFrontModel.AspNetUser" Width="1.5" PointX="8.25" PointY="5.125" />
+        <EntityTypeShape EntityType="StoreFrontModel.UserDetail" Width="1.5" PointX="10.5" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="StoreFrontModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="StoreFrontModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="StoreFrontModel.FK_UserDetails_AspNetUsers" />
+        <AssociationConnector Association="StoreFrontModel.AspNetUserRoles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

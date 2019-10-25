@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using StoreFront.Data.EF;
 
 namespace StoreFront.UI.MVC.Controllers
 {
@@ -156,11 +157,26 @@ namespace StoreFront.UI.MVC.Controllers
                     //sets default to "customer"
                     UserManager.AddToRole(user.Id, "customer");
 
+                    #region Dealing with Customer user details
+                    UserDetail newUserDetails = new UserDetail();
+                    newUserDetails.UserID = user.Id;
+                    newUserDetails.FirstName = model.FirstName;
+                    newUserDetails.LastName = model.LastName;
+
+                    StoreFrontEntities db = new StoreFrontEntities();
+                    db.UserDetails.Add(newUserDetails);
+                    db.SaveChanges();
+
+                    #endregion
+
+                    #region REMOVED Email Confrimed Demo Stuff
                     //var code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     //await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
                     //ViewBag.Link = callbackUrl;
                     //return View("DisplayEmail");
+
+                    #endregion
 
                     return RedirectToAction("Index", "Home");
                 }

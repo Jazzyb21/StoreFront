@@ -32,5 +32,10 @@ namespace StoreFront.Data.EF
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<TreatCategory> TreatCategories { get; set; }
         public virtual DbSet<TreatStatu> TreatStatus { get; set; }
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<UserDetail> UserDetails { get; set; }
     }
 }
