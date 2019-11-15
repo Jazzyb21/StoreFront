@@ -1,4 +1,28 @@
-﻿/*******************
+﻿/*sticky footer*/
+body {
+    height: 100%;
+    position: relative;
+}
+
+#main {
+    min-height: 100vh;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 128px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 12em;
+}
+
+
+
+
+/*******************
     LINKS
 ********************/
 a {
@@ -13,13 +37,17 @@ a {
     Navbar and DropDown Menu
 ********************/
 
-header .navbar li.nav-item .nav-link.active {
-    color: #f205cb;
+header {
+    background-color: #7ABFB3;
 }
 
-header .navbar li.nav-item .nav-link:hover {
-    color: #f205cb;
-}
+    header .navbar li.nav-item .nav-link.active {
+        color: #f205cb;
+    }
+
+    header .navbar li.nav-item .nav-link:hover {
+        color: #f205cb;
+    }
 
 .navbar-dark .navbar-nav .nav-link {
     color: #fff;
@@ -60,11 +88,11 @@ header .navbar {
     color: white;
 }
 
-#registerLink:hover, #loginLink:hover {
+    #registerLink:hover, #loginLink:hover {
         color: #f205cb;
-}
+    }
 
-.navbar > .container, 
+.navbar > .container,
 .navbar > .container-fluid {
     text-align: center;
 }
@@ -97,6 +125,8 @@ div.text-md-center > p {
     margin: auto;
     width: 15%;
 }
+
+
 
 /*************************
     Login Page
@@ -149,6 +179,8 @@ span.phoneNumber {
         color: #f205cb;
     }
 
+
+
 /*************************
     Services
 **************************/
@@ -165,10 +197,18 @@ span.phoneNumber {
     width: 60%;
 }
 
+/*About*/
+
+.mainAboutTitle {
+    margin-bottom: 1em;
+}
 
 /******************
     Index, Edit, Create, Delete BakeriesController
 ***********************/
+.mainBakeryTitle {
+    margin-bottom: 1em;
+}
 
 .img-thumbnail {
     border: unset;
@@ -176,8 +216,26 @@ span.phoneNumber {
     height: 200px;
 }
 
-.containerRight {
-    margin-top: 2.3em;
+.mainContainer {
+    /*margin-top: 10.5em;*/
+    /*margin: 0 auto;*/
+    margin-top: 11em;
+    margin-bottom: 11em;
+    border: solid 1px #f205cb;
+    box-shadow: 12px 12px 2px 1px rgba(0,0,0,.4);
+    padding: 1em;
+}
+
+
+#containerLeft {
+    float: left;
+    width: 49%;
+    text-align: right;
+}
+
+#containerRight {
+    float: right;
+    width: 45%
 }
 
 .mainContainer > .row {
@@ -197,9 +255,43 @@ span.phoneNumber {
     height: 50px !important;
 }
 
-.mainEdit {
-    margin: auto;
-    width: 60%;
+
+
+.mainSection {
+    margin-top: 4em;
 }
 
 
+
+
+
+
+/*UserAdmin CRUD*/
+.userContainer {
+    margin-top: 10em;
+}
+
+.userIndex {
+}
+
+/*RolesAdmin CRUD*/
+.rolesContainer {
+    margin-top: 10em;
+}
+
+.rolesIndex, .userIndex {
+    min-height: 60px;
+    width: 50%;
+}
+
+.rolesEdit, .userEdit, .userDetail {
+    padding-top: 5em;
+    padding-bottom: 8em;
+    width: 70%;
+}
+
+.rolesDelete, .userDelete {
+    padding-top: 5em;
+    padding-bottom: 8em;
+    width: 70%;
+}

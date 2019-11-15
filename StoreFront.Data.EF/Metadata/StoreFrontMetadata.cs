@@ -19,7 +19,7 @@ namespace StoreFront.Data.EF
         public string TreatName { get; set; }
 
 
-        [Range(1, 2, ErrorMessage = "* Value must be a valid number, 1 or 2.")]
+     
         public int TreatCategoryID { get; set; }
 
 
@@ -33,6 +33,7 @@ namespace StoreFront.Data.EF
         public decimal Price { get; set; }
 
         [Display(Name = "Units Sold")]
+
         [DisplayFormat(NullDisplayText = "[-N/A-]")]
         [Range(0, double.MaxValue, ErrorMessage = "* Value must be a valid number, 0 or larger.")]
         public Nullable<int> UnitsSold { get; set; }
@@ -40,14 +41,12 @@ namespace StoreFront.Data.EF
         [Range(0, double.MaxValue, ErrorMessage = "* Value must be a valid number, 0 or larger.")]
         public int Quantity { get; set; }
 
-        [Range(1, 2, ErrorMessage = "* Value must be a valid number, 1 or 2")]
+
         public int TreatStatusID { get; set; }
 
 
-        [Range(1, 2, ErrorMessage = "* Value must be a valid number, 1 or 2")]
         public int HasGlutenID { get; set; }
 
-        [Range(0, double.MaxValue, ErrorMessage = "* Value must be a valid number, 0 or larger.")]
         public int Calories { get; set; }
 
         [Required(ErrorMessage = "*")]
@@ -56,7 +55,6 @@ namespace StoreFront.Data.EF
         [StringLength(250, ErrorMessage = "* This value must be 250 characters or less.")]
         public string Description { get; set; }
 
-        [Range(1, 5, ErrorMessage = "* Value must be a valid number between 1 and 5.")]
         public int SeasonID { get; set; }
 
         [StringLength(200, ErrorMessage = "* The value must be 200 characters or less.")]
@@ -65,7 +63,6 @@ namespace StoreFront.Data.EF
         [DisplayFormat(NullDisplayText = "[-N/A-]")]
         public string Ingredients { get; set; }
 
-        [Required(ErrorMessage = "*")]
         [DisplayFormat(NullDisplayText = "[-N/A-]")]
         [StringLength(100, ErrorMessage = "* The value must be 100 characters or less.")]
         [Display(Name = "Image")]

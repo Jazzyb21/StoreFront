@@ -55,10 +55,39 @@ namespace StoreFront.UI.MVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles ="Admin")]
-        public ActionResult Create([Bind(Include = "BakeryTreatID,TreatName,TreatCategoryID,Cost,Price,UnitsSold,Quantity,TreatStatusID,HasGlutenID,Calories,Description,SeasonID,Ingredients,ImageFileName")] Bakery bakery)
+        public ActionResult Create([Bind(Include = "BakeryTreatID,TreatName,TreatCategoryID,Cost,Price,UnitsSold,Quantity,TreatStatusID,HasGlutenID,Calories,Description,SeasonID,Ingredients,ImageFileName")] Bakery bakery, HttpPostedFileBase bakeryPic)
         {
             if (ModelState.IsValid)
             {
+                #region File Upload
+                //use a default image if none is provided
+                string imgName = "default.jpg";
+
+                if (bakeryPic != null) //your httpPostedFileBase Object that should be added to the action != null
+                {
+                    imgName = bakeryPic.FileName;
+
+                    string ext = imgName.Substring(imgName.LastIndexOf('.'));
+
+                    string[] goodExts = { ".jpg", ".jpeg", "gif", ".png" };
+
+                    if (goodExts.Contains(ext.ToLower())) /*&& (bakeryPic.ContentLength <= 4194304)) *///4mb max asp.net
+                    {
+                        imgName = Guid.NewGuid() + ext;
+
+                        bakeryPic.SaveAs(Server.MapPath("~/Content/img/" + imgName));
+              
+                    }
+                    else
+                    {
+                        imgName = "default.jpg";
+                    }
+                }
+
+                bakery.ImageFileName = imgName;
+
+                #endregion
+
                 db.Bakeries.Add(bakery);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -97,10 +126,34 @@ namespace StoreFront.UI.MVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles ="Admin")]
-        public ActionResult Edit([Bind(Include = "BakeryTreatID,TreatName,TreatCategoryID,Cost,Price,UnitsSold,Quantity,TreatStatusID,HasGlutenID,Calories,Description,SeasonID,Ingredients,ImageFileName")] Bakery bakery)
+        public ActionResult Edit([Bind(Include = "BakeryTreatID,TreatName,TreatCategoryID,Cost,Price,UnitsSold,Quantity,TreatStatusID,HasGlutenID,Calories,Description,SeasonID,Ingredients,ImageFileName")] Bakery bakery, HttpPostedFileBase bakeryPic)
         {
             if (ModelState.IsValid)
             {
+                #region File Upload
+                string imgName = "default.jpg";
+                if (bakeryPic != null)
+                {
+                    imgName = bakeryPic.FileName;
+
+                    string ext = imgName.Substring(imgName.LastIndexOf('.'));
+
+                    string[] goodExts = { ".jpg", ".jpeg", "gif", ".png" };
+
+                    if (goodExts.Contains(ext.ToLower()) && (bakeryPic.ContentLength <= 4194304))
+                    {
+                        imgName = Guid.NewGuid() + ext;
+
+                        bakeryPic.SaveAs(Server.MapPath("~/Content/img/" + imgName));
+                    }
+                    else
+                    {
+                        imgName = "default.jpg";
+                    }
+                }
+
+                bakery.ImageFileName = imgName;
+                #endregion
                 db.Entry(bakery).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -135,6 +188,12 @@ namespace StoreFront.UI.MVC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Bakery bakery = db.Bakeries.Find(id);
+
+            if (bakery.ImageFileName != null && bakery.ImageFileName != "default.jpg")
+            {
+                System.IO.File.Delete(Server.MapPath("~/Content/img/" + Session["currentImage"].ToString()));
+            }
+
             db.Bakeries.Remove(bakery);
             db.SaveChanges();
             return RedirectToAction("Index");

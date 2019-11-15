@@ -2,6 +2,37 @@
     ViewBag.Title = "Cupcakery";
 }
 
+@section styles{
+<style>
+
+
+
+    header {
+        background-color: unset !important;
+    }
+
+    @@media (max-width: 992px)
+    {
+    header {
+        background-color: #7ABFB3 !important;
+        font-weight: 600 !important;
+    }
+}
+</style>
+    }
+
+<section class="home-slider-loop-false  inner-page owl-carousel">
+    <div class="slider-item" style="background-image: url('/Content/img/brooke-lark-pGM4sjt_BdQ-unsplash.jpg');">
+        <div class="container">
+            <div class="row slider-text align-items-center justify-content-center">
+                <div class="col-md-8 text-center col-sm-12 element-animate">
+                    <h1 class="mainTitle">@ViewBag.Title</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="section bg-light element-animate">
     <div class="container">
         <div class="row">

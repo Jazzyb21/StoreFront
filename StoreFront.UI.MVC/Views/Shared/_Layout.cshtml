@@ -56,6 +56,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="@Url.Action("Contact", "Home")">Contact</a>
                         </li>
+                       
                     </ul>
                     <ul class="navbar-nav  ml-auto">
                         <li>
@@ -71,31 +72,30 @@
                                 </div>
                             </li>
                         }
+                        
                     </ul>
-                    <div>
+                    @*<div>
                         <a href="/ShoppingCart/Index">
                             <i class="fa fa-shopping-cart fa-lg pl-2"></i>
                         </a>
-                    </div>
+                    </div>*@
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ShoppingCart/Index">
+                                <i class="fa fa-shopping-cart fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
     </header>
     <!-- END header -->
 
-    <section class="home-slider-loop-false  inner-page owl-carousel">
-        <div class="slider-item" style="background-image: url('/Content/img/brooke-lark-pGM4sjt_BdQ-unsplash.jpg');">
-            <div class="container">
-                <div class="row slider-text align-items-center justify-content-center">
-                    <div class="col-md-8 text-center col-sm-12 element-animate">
-                        <h1 class="mainTitle">@ViewBag.Title</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    @RenderBody()
+    <div id="main">
+        @RenderBody()
+    </div>
 
     <footer class="site-footer" role="contentinfo">
         <div class="container">

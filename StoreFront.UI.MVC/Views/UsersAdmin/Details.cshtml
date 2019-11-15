@@ -7,21 +7,21 @@
 
 
 
-<div class="container">
+<div class="container userContainer userDetail">
     <h2 class="text-left">@ViewBag.Title</h2>
     <div class="row">
         <div>
-            <div id="userNameLeft" style="float: left; width:34%">
+            <div id="userNameLeft">
                 <strong> @Html.DisplayNameFor(model => model.UserName):</strong>
             </div>
-            <div id="userNameRight" style="margin-left: 45%; text-align: right;">
+            <div id="userNameRight">
                 @Html.DisplayFor(model => model.UserName)
             </div>
             <div class="clearfix"></div>
         </div>
     </div>
     <div class="row">
-        <p style="float: left; width: 9%"> <strong>User Role(s):</strong></p>
+        <p> <strong>User Role(s):</strong></p>
         @if (ViewBag.RoleNames.Count == 0)
         {
             <p>No roles found for this user.</p>
@@ -33,7 +33,7 @@
                 <div> @item</div>
 
             }
-                <div class="clearfix"></div>
+               
     </div>
     <div class="row">
         <div>

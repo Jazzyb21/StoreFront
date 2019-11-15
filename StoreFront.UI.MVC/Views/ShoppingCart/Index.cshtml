@@ -7,7 +7,30 @@
     int totalCartItems = 0;
 }
 
-<div class="container">
+@section styles {
+    <style>
+        #noItemContainer {
+            height: 10em;
+            width: 60%;
+            margin-bottom: 5em;
+            border: 1px solid #7ABFB3;
+            box-shadow: 12px 12px 2px 1px rgba(0, 0, 0, .2);
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        .mainContainer{
+            margin-top: 10em;
+        }
+
+        /*.container{
+            position: relative;
+            min-height: 100vh;
+        }*/
+        
+    </style>
+    }
+<div class="container mainContainer">
     <p class="text-right p-3">
         @Html.ActionLink("Back To Shopping", "Index", "Bakeries")
     </p>
@@ -17,7 +40,7 @@
 
 @if (Model.Count == 0)
 {
-    <div class="container">
+    <div class="container" id="noItemContainer">
         <div class="offset-2 col-md-8"><p class="alert alert-danger text-center">@ViewBag.Message</p></div>
     </div>
 }

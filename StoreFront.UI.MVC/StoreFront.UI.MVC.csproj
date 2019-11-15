@@ -213,6 +213,7 @@
     <Content Include="Content\fonts\ionicons\css\ionicons.min.css" />
     <Content Include="Content\fonts\ionicons\fonts\ionicons.svg" />
     <Content Include="Content\img\am-fl-WfKuwEcRLkE-unsplash.jpg" />
+    <Content Include="Content\img\default.jpg" />
     <Content Include="Content\img\behzad-ghaffarian-5JcdQfzR_YA-unsplash.jpg" />
     <Content Include="Content\img\brooke-lark-pGM4sjt_BdQ-unsplash.jpg" />
     <Content Include="Content\img\caitlyn-de-wild-Rdj-546bmZ8-unsplash.jpg" />
@@ -423,7 +424,9 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
